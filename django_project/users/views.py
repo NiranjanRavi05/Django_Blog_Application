@@ -22,6 +22,8 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
+# Function to create a profile page for the user
+# login tag added to perform the login check for the user
 @login_required()
 def profile(request):
     # check if the request method is POST

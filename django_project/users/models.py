@@ -8,7 +8,8 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
-
+    
+    # Overwrite save method in order to save the uploaded image files in same size in order to reduce memory consumption
     def save(self, *args, **kwargs):
         super(Profile, self).save(*args, **kwargs)
 

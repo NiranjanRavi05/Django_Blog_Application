@@ -18,6 +18,7 @@ class Post(models.Model):
         #reverse command returns the url to the route
         return reverse('post-detail', kwargs={'pk': self.pk})
 
+    # Overwrite save method in order to save the uploaded image files in same size in order to reduce memory consumption
     def save(self, *args, **kwargs):
         super(Post, self).save(*args, **kwargs)
 
